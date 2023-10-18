@@ -12,12 +12,21 @@
     "start": "cd server && npm start",
     "postinstall": "npm run install:client && npm run install:server",
     "install:client": "cd client && npm install --include=dev",
-    "install:server": "cd server && npm install --include=dev"
+    "install:server": "cd server && npm install --include=dev",
+    "check": "npm run check:prettier",
+    "lint": "npm run lint:client && npm run lint:server",
+    "lint:client": "cd client && npm run lint",
+    "lint:server": "cd server && npm run lint",
+    "check:prettier": "prettier --check .",
+    "prettier": "prettier --write ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^8.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
   }
 }

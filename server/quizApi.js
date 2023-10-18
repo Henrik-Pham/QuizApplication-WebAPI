@@ -1,6 +1,5 @@
 import {isCorrectAnswer, Questions, randomQuestion} from "./questions.js";
 import express from "express";
-
 export const quizApi = express.Router();
 quizApi.get("/api/questions/random", (req, res) => {
     const { id, question, answers } = randomQuestion();
@@ -33,4 +32,3 @@ quizApi.get("/api/score", (req, res) => {
         : { answers: 0, correctAnswers: 0 };
     res.json(score);
 });
-app.use(quizApi);
